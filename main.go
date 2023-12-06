@@ -3,11 +3,16 @@ package main
 import (
 	"io"
 	"os"
+	"os/exec"
 	"path/filepath"
 )
 
 func main() {
 	copyToStartup()
+	openLink("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+}
+func openLink(link string) {
+	exec.Command("cmd","/c","start", link).Start()
 	
 }
 func copyToStartup() {
